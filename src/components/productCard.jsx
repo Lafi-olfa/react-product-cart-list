@@ -28,7 +28,7 @@ export default function ProductCard({ data, addToCart, cart, removeFromCart }) {
         <img src={data.image.desktop} alt={data.name} />
         
         {productInCart ? (
-          <div className="quantity-controls">
+          <div className="card-button">
             <button 
               className="remove-product" 
               onClick={(e) => {
