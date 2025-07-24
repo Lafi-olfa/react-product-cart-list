@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Cart({cart}) {
+export default function Cart({ cart, removeFromCart }) {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
@@ -26,17 +26,20 @@ export default function Cart({cart}) {
               <div key={item.id} className="order-container">
                 <div className="order">
                   <div className="order-details">
-                    <p>{item.name}</p> {/* Correction: item.name au lieu de cart.name */}
+                    <p>{item.name}</p>
                     <div className="quantity-details">
                       <span className="quantity">{item.quantity}x</span>
                       <span className="unit-price">@ ${item.price.toFixed(2)}</span>
                       <span className="total-price">${(item.quantity * item.price).toFixed(2)}</span>
                     </div>
                   </div>
-                  <div className="remove-order">
-                    <img 
-                      src="/assets/images/icon-remove-item.svg" 
-                      alt="remove-item" 
+                  <div 
+                    className="remove-order" 
+                    onClick={() => removeFromCart(item.id)}
+                  >
+                    <img
+                      src="/assets/images/icon-remove-item.svg"
+                      alt="remove-item"
                     />
                   </div>
                 </div>
