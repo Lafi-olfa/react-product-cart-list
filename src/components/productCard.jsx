@@ -25,7 +25,7 @@ export default function ProductCard({ data, addToCart, cart, removeFromCart }) {
   return (
     <div className="card">
       <div className="card-header">
-        <img src={data.image.desktop} alt={data.name} />
+        <img src={data.image.desktop} className='product-image' alt={data.name} />
         
         {productInCart ? (
           <div className="card-button">
