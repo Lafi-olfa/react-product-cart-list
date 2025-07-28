@@ -53,7 +53,7 @@ const removeFromCart = (productId) => {
   return (
     <div id="container">
    <ProductList addToCart={addToCart} cart={cart} removeFromCart={removeFromCart}/>
-      <Cart cart={cart} addToCart={addToCart} />
+      <Cart cart={cart} addToCart={addToCart}  removeFromCart={removeFromCart}  />
     </div>
   );
 }
