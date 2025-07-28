@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContext } from '../context/context';
 
-export default function ProductCard({ data, addToCart, cart, removeFromCart }) {  
+export default function ProductCard({ data }) {  
+   const {addToCart, cart, removeFromCart} = useContext(ProductContext);
+
   if (!data) return <p>Loading...</p>;
   
   const generateProductId = (name) => {

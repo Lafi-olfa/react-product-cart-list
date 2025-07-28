@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./productCard";
 
-export default function ProductList({addToCart, cart, removeFromCart}) {
+export default function ProductList() {
  const [products, setProducts]= useState([]);
  useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +33,7 @@ export default function ProductList({addToCart, cart, removeFromCart}) {
       <h1>Desserts</h1>
     {
       products.map((product, index)=> 
-      <ProductCard key={index} removeFromCart={removeFromCart} cart={cart} addToCart={addToCart} data={product}/>
+      <ProductCard key={index} data={product}/>
     )
     }
     </div>
